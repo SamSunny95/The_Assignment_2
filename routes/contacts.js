@@ -63,7 +63,7 @@ router.post('/add', requireAuth, function (req, res, next) {
     });
 });
 
-/* Render the User Edit Page */
+/* Render the Contact Edit Page */
 router.get('/:id', requireAuth, function (req, res, next) {
     // create an id variable
     var id = req.params.id;
