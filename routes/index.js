@@ -4,13 +4,29 @@ var router = express.Router();
 
 var User = require('../models/user');
 
-/* Render home page. */
-router.get('/', function (req, res, next) {
-    res.render('index', {
-        title: 'Home',
-        displayName: req.user ? req.user.displayName : ''
-    });
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Home', displayName: req.user ? req.user.displayName : '' });
 });
+
+router.get('/about', function(req, res, next) {
+  res.render('about', {title: 'About', displayName: req.user ? req.user.displayName : ''});
+});
+
+router.get('/projects', function(req, res, next) {
+  res.render('projects', {title:'Projects', displayName: req.user ? req.user.displayName : ''});
+});
+
+router.get('/contact', function(req, res, next) {
+  res.render('contact', {title:'Contact', displayName: req.user ? req.user.displayName : ''});
+});
+
+router.get('/services', function(req, res, next) {
+  res.render('services', {title: 'Services', displayName: req.user ? req.user.displayName : ''});
+});
+
+
+
 
 /* Render Login page. */
 router.get('/login', function (req, res, next) {

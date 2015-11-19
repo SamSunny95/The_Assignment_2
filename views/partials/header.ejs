@@ -1,74 +1,47 @@
+<!-- 
+Designer Name: Sam Parathuvayalil Sunny
+Website: Personal Online Portfolio
+File Name: header.ejs
+Description: Header + Template for all views
+  -->
 <!DOCTYPE html>
 <html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sam's Portfolio</title>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+          <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   
+        <!-- Optional theme -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">   
+     
+       <!-- Latest   jQuery -->
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  
+      <!-- Latest compiled and minified   JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+      
+  </head>
+  <body class="" style="background-image: url(images/bgimage.jpg);position: relative; top: 30px">
 
-<head>
-  <title>
-    <%= title %>
-  </title>
+     <div class="" style="height: 800px;">
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-  <!-- Custom CSS -->
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
-
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-        aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Express, Mongoose and Passport</a>
-      </div> <!-- navbar-header -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <% if(title == "Home" ) { %>
-            <li class="active">
-          <% } else { %>
-          <li>
-            <% } %>
-            <a href="/">Home</a></li>
-          <li role="separator" class="divider"></li>
-          <% if (displayName) { %>
-            <% if(title == "Users" ) { %>
-            <li class="active">
-              <% } else { %>
-            <li>
-              <% } %>
-              <a href="/users">Users</a></li>
-            <li class="navbar-text">Hello,
-              <%= displayName %>
-            </li>
-            <li><a href="/logout">Logout</a></li>
-            <% } else { %>
-              <% if(title == "Register" ) { %>
-            <li class="active">
-            <% } else { %>
-            <li>
-            <% } %>
-                <a href="/register">Register</a></li>
-              <% if(title == "Login" ) { %>
-            <li class="active">
-            <% } else { %>
-            <li>
-            <% } %>
-                <a href="/login">Login</a></li>
-              <% } %>
-        </ul> <!-- nav navbar-nav navbar-right -->
-      </div> <!-- collapse navbar-collapse -->
-    </div> <!-- container-fluid -->
-  </nav> <!-- navbar navbar-inverse -->
+      <nav style="position: fixed; width: 100%;top:0px;z-index: 2;opacity: .8" class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	  <div style="width: 100%; font-size: 21px;" class="navbar-header">
+      <ul class="nav navbar-nav" style="width: 100%">
+			<li style="width: 40%;"><a style="color:lightblue;font-size: 29px" href="/">Sam Sunny</a></li>
+			<li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/">Home</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/about">About</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/projects">Projects</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/services">Services</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/contact">Contact</a></li>
+            <li style="width: 10%;text-align: center;"><% if (displayName) { %><a style="color: lightgreen;" href="/logout">Logout</a>
+            <% } else { %><a style="color: lightgreen;" href="/login">Login</a><% } %></li>
+      </ul>
+	  </div>
+	  </div>
+</nav>
