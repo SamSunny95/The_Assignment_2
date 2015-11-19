@@ -31,57 +31,59 @@ router.get('/', requireAuth, function (req, res, next) {
     });
 });
 
-/* Render the Add Contacts Page 
+/* Render the Add Contacts Page */
 router.get('/add', requireAuth, function (req, res, next) {
     res.render('contacts/add', {
         title: 'Business Contacts',
         displayName: req.user ? req.user.displayName : ''
     });
 });
-*/
-/* process the submission of a new Contact 
+
+/* process the submission of a new Contact */
 router.post('/add', requireAuth, function (req, res, next) {
-    var user = new User(req.body);
-    var hashedPassword = user.generateHash(user.password);
-    User.create({
+    var contact = new Contact(req.body);
+    //var hashedPassword = user.generateHash(user.password);
+    Contact.create({
         email: req.body.email,
-        password: hashedPassword,
-        displayName: req.body.displayName,
+        contactName: req.body.contactname,
+        //password: hashedPassword,
+        //displayName: req.body.displayName,
+        phone : req.body.phone,
         provider: 'local',
         created: Date.now(),
         updated: Date.now()
-    }, function (err, User) {
+    }, function (err, Contact) {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.redirect('/users');
+            res.redirect('/bcontacts');
         }
     });
 });
-*/
-/* Render the User Edit Page 
+
+/* Render the User Edit Page */
 router.get('/:id', requireAuth, function (req, res, next) {
     // create an id variable
     var id = req.params.id;
     // use mongoose and our model to find the right user
-    User.findById(id, function (err, user) {
+    Contact.findById(id, function (err, contact) {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
             //show the edit view
-            res.render('users/edit', {
-                title: 'Users',
-                user: user,
+            res.render('contacts/edit', {
+                title: 'Edit Contact',
+                contact: contact,
                 displayName: req.user ? req.user.displayName : ''
             });
         }
     });
 });
-*/
+
 /* process the edit form submission 
 router.post('/:id', requireAuth, function (req, res, next) {
     var id = req.params.id;
@@ -102,18 +104,18 @@ router.post('/:id', requireAuth, function (req, res, next) {
     });
 });
 */
-/* run delete on the selected user 
+/* run delete on the selected contact*/ 
 router.get('/delete/:id', requireAuth, function (req, res, next) {
     var id = req.params.id;
-    User.remove({ _id: id }, function (err) {
+    Contact.remove({ _id: id }, function (err) {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.redirect('/users');
+            res.redirect('/bcontacts');
         }
     });
 });
-*/
+
 module.exports = router;

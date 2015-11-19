@@ -1,0 +1,32 @@
+<% include ../partials/header.ejs %>
+<main class="panel panel-body" style="width: 98%;position: relative; left: 1%;top:2%">
+    <h1>Edit a Business Contact</h1>
+    <div class="col-sm-4">
+        <form method="post">
+            <fieldset class="form-group">
+                <label for="email">Email: *</label>
+                <input name="email" type="email" class="form-control" required value="<%= contact.email %>" autofocus />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="contactname">Contact Name: *</label>
+                <input name="contactname" type="text" class="form-control" required value="<%= contact.contactName %>" />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="phone">Phone: *</label>
+                <input name="phone" type="password" class="form-control" required value="<%= user.phone %>"/>
+            </fieldset>
+            <fieldset class="form-group text-right">
+                <button type="submit" class="btn btn-primary" title="Update">
+                    <i class="fa fa-pencil-square-o"></i> Update</button>
+                <a href="/users/delete/<%= contact._id %>" title="Delete" onclick="return confirm('Are you sure you want to delete this?');" class="btn btn-danger">
+                    <i class="fa fa-trash-o"></i> Delete
+                </a>
+                <a href="/users" title="Cancel"  class="btn btn-default">
+                    <i class="fa fa-undo"></i>  Cancel
+                </a>
+            </fieldset>
+        </form>
+    </div>
+
+</main>
+<% include ../partials/footer.ejs %>

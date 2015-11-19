@@ -1,7 +1,7 @@
 <% include ../partials/header.ejs %>
 
 <main class="panel panel-body" style="width: 98%;position: relative; left: 1%;top:2%">
-    <h1>Add a New User</h1>
+    <h1>Add a New Business Contact</h1>
        <div class="col-sm-4">
         <form method="post">
             <fieldset class="form-group">
@@ -9,16 +9,12 @@
                 <input name="email" type="email" class="form-control" required autofocus />
             </fieldset>
             <fieldset class="form-group">
-                <label for="username">Username: *</label>
-                <input name="username" type="text" class="form-control" required />
+                <label for="contactname">Contact Name: *</label>
+                <input name="contactname" type="text" class="form-control" required />
             </fieldset>
             <fieldset class="form-group">
-                <label for="password">Password: *</label>
-                <input name="password" type="password" class="form-control" required />
-            </fieldset>
-            <fieldset class="form-group">
-                <label for="displayName">Display Name: *</label>
-                <input name="displayName" type="text" class="form-control" required />
+                <label for="phone">Phone No.: *</label>
+                <input name="phone" type="text" class="form-control" required />
             </fieldset>
             <fieldset class="form-group text-right">
                 <input type="submit" class="btn btn-success" value="Submit"/>
