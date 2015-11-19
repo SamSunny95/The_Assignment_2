@@ -84,26 +84,29 @@ router.get('/:id', requireAuth, function (req, res, next) {
     });
 });
 
-/* process the edit form submission 
+/* process the edit form submission */
 router.post('/:id', requireAuth, function (req, res, next) {
     var id = req.params.id;
-    var user = new User(req.body);
-    user.password = user.generateHash(user.password);
-    user._id = id;
-    user.updated = Date.now();
+    var contact = new Contact(req.body);
+    //user.password = user.generateHash(user.password);
+    contact.contactName = req.body.contactname;
+    contact.phone = req.body.phone;
+    contact.email = req.body.email;
+    contact._id = id;
+    contact.updated = Date.now();
     
     // use mongoose to do the update
-    User.update({ _id: id }, user, function (err) {
+    Contact.update({ _id: id }, contact, function (err) {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.redirect('/users');
+            res.redirect('/bcontacts');
         }
     });
 });
-*/
+
 /* run delete on the selected contact*/ 
 router.get('/delete/:id', requireAuth, function (req, res, next) {
     var id = req.params.id;

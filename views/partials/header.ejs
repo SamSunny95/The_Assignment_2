@@ -32,16 +32,28 @@ Description: Header + Template for all views
       <nav style="position: fixed; width: 100%;top:0px;z-index: 2;opacity: .8" class="navbar navbar-inverse">
 	  <div class="container-fluid">
 	  <div style="width: 100%; font-size: 21px;" class="navbar-header">
+	  <% if(displayName) { %>
       <ul class="nav navbar-nav" style="width: 100%">
 			<li style="width: 40%;"><a style="color:lightblue;font-size: 29px" href="/">Sam Sunny</a></li>
 			<li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/">Home</a></li>
             <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/about">About</a></li>
             <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/projects">Projects</a></li>
             <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/services">Services</a></li>
-            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/contact">Contact</a></li>
-            <li style="width: 10%;text-align: center;"><% if (displayName) { %><a style="color: lightgreen;" href="/logout">Logout</a>
-            <% } else { %><a style="color: lightgreen;" href="/login">Login</a><% } %></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/contact">Contact Me</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/users">Users</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/bcontacts">Business Contacts</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/logout">Logout</a></li>
+      </ul>      <% } else { %>
+      <ul class="nav navbar-nav" style="width: 100%">
+			<li style="width: 40%;"><a style="color:lightblue;font-size: 29px" href="/">Sam Sunny</a></li>
+			<li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/">Home</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/about">About</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/projects">Projects</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/services">Services</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/contact">Contact Me</a></li>
+            <li style="width: 10%;text-align: center;"><a style="color: lightgreen;" href="/login">Login</a></li>
       </ul>
+	  <% } %>
 	  </div>
 	  </div>
 </nav>
