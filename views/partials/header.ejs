@@ -34,7 +34,11 @@ Description: Header + Template for all views
 	  <div style="width: 100%; font-size: 21px;" class="navbar-header">
 	  <% if(displayName) { %>
       <ul class="nav navbar-nav" style="width: 100%">
-			<li style="width: 32%;"><a style="color:lightblue;font-size: 29px" href="/">Sam Sunny</a></li>
+			<li style="width: 32%;"><a style="color:lightblue;font-size: 29px" href="/">Sam Sunny
+			<% if(displayName) { %>
+			<span style="color:lightblue;font-size: 21px;position: absolute; right: 0px">Hello <% displayName %></span>
+			<% } %>
+			</a></li>
 			<li role="separator" class="divider"></li>
 			<li style="width: 6%;text-align: center;"><a style="color: lightgreen;" href="/">Home</a></li>
             <li style="width: 6%;text-align: center;"><a style="color: lightgreen;" href="/about">About</a></li>
